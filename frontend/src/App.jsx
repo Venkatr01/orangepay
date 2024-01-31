@@ -3,8 +3,6 @@ import { Dashboard } from "../pages/dashboard";
 import { SendMoney } from "../pages/send";
 import { Signin } from "../pages/signin";
 import { Signup } from "../pages/Signup";
-import { Heading } from "../components/heading";
-
 
 function App() {
 
@@ -18,7 +16,6 @@ function App() {
           <Route path="/send" element={<SendMoney />} />
         </Routes>
       </BrowserRouter>
-      <Heading ></Heading>
     </>
   )
 }
