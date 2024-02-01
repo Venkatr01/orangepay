@@ -16,7 +16,7 @@ export function Signup(){
           <Inputbox label={"Last Name"} placeholder={"Doe"}></Inputbox>
           <Emailinput label={"Email"} placeholder={"johndoe@example.com"}></Emailinput>
           <Password label={"Password"} />
-          <Button />
+          <Button value={"Sign Up"}/>
         </div>
       </div>
     </>
