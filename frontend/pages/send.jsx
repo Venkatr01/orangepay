@@ -1,3 +1,9 @@
-export function SendMoney(){
-    
+import { SendMoney } from "../components/SendMoney"
+
+export function Send(){
+    return (
+        <>
+            <SendMoney />
+        </>
+    )
 }
