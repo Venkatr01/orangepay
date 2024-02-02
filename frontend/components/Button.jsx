@@ -1,7 +1,4 @@
-export function Button(){
-    return (
-        <>
-            <input type="button" value="Sign Up" className="bg-black hover:bg-blue-700 text-white font-bold py-2 px-12 border border-blue-700 rounded w-full" />        
-        </>
-    )
-}
+
+export function Button({label, onPress}) {
+    return <button onClick={onPress} type="button" className="w-full text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2">{label}</button>
+}  
