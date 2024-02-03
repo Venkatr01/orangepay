@@ -3,6 +3,7 @@ import { Dashboard } from "../pages/dashboard";
 import { Send } from "../pages/send";
 import { Signin } from "../pages/signin";
 import { Signup } from "../pages/Signup";
+import { Homepage } from "../pages/Homepage";
 
 function App() {
 

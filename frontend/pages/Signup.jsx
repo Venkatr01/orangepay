@@ -18,38 +18,40 @@ export function Signup(){
 
   return (
     <>
+      <div className="flex justify-center h-screen bg-orange-500">
+        <div className="flex items-center justify-center" >
+          <div className="flex flex-col border border-white mt-5 hover:border-black  hover:text-black rounded-xl w-80 px-5 py-5 pb-10 items-center justify-center gap-3 border-white-100" >
+            <Heading  label={"Sign Up"}></Heading>
+            {/* <Subheading label={"Enter your information to create an account"} ></Subheading> */}
+            <Inputbox onChange={e =>{
+              setFirstName(e.target.value)
+            }} label={"First Name"} placeholder={"John"}></Inputbox>
+            <Inputbox onChange={e =>{
+              setLastName(e.target.value)
+            }} label={"Last Name"} placeholder={"Doe"}></Inputbox>
+            <Emailinput onChange={e =>{
+              setUserName(e.target.value)
+            }}label={"Email"} placeholder={"johndoe@example.com"}></Emailinput>
+            <Password onChange={e =>{
+              setPassword(e.target.value)
+            }} label={"Password"} />
 
-      <div className="flex items-center justify-center my-10" >
-        <div className="flex flex-col border border-gray-400 mt-5 hover:border-black rounded-xl w-80 px-5 py-5 pb-10 items-center justify-center gap-3 border-white-100" >
-          <Heading  label={"Sign Up"}></Heading>
-          {/* <Subheading label={"Enter your information to create an account"} ></Subheading> */}
-          <Inputbox onChange={e =>{
-            setFirstName(e.target.value)
-          }} label={"First Name"} placeholder={"John"}></Inputbox>
-          <Inputbox onChange={e =>{
-            setLastName(e.target.value)
-          }} label={"Last Name"} placeholder={"Doe"}></Inputbox>
-          <Emailinput onChange={e =>{
-            setUserName(e.target.value)
-          }}label={"Email"} placeholder={"johndoe@example.com"}></Emailinput>
-          <Password onChange={e =>{
-            setPassword(e.target.value)
-          }} label={"Password"} />
+            <Button onPress={async()=>{
+              const response = await axios.post("https://wallet-backed.onrender.com/api/v1/user/signup",{
+                firstName,
+                lastName,
+                username,
+                password
+              });
+              localStorage.setItem("token",response.data.token);
+              navigate('/dashboard');
 
-          <Button onPress={async()=>{
-            const response = await axios.post("https://wallet-backed.onrender.com/api/v1/user/signup",{
-              firstName,
-              lastName,
-              username,
-              password
-            });
-            localStorage.setItem("token",response.data.token);
-            navigate('/dashboard');
-
-          }}  label={"Sign Up"}/>
-          <Footer value={"Already have an account? "} action={"Login"} to={"/signin"} />
+            }}  label={"Sign Up"}/>
+            <Footer value={"Already have an account? "} action={"Login"} to={"/signin"} />
+          </div>
         </div>
       </div>
+      
     </>
   )
 }

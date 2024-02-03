@@ -16,13 +16,13 @@ export const Users = () => {
     },[filter])
 
     return <>
-        <div className="font-bold mt-6 text-lg">
+        <div className="font-bold text-lg">
             Users
         </div>
         <div className="my-2">
-            <input onChange={(e)=>{
+            <input  onChange={(e)=>{
                 setFilter(e.target.value)
-            }} type="text" placeholder="Search users..." className="w-full px-2 py-1 border rounded border-slate-200"></input>
+            }} type="text" placeholder="Search users..." className="w-full px-2 py-1 border rounded border-black"></input>
         </div>
         <div>
             {users.map(user => <User user={user} />)}
@@ -37,7 +37,7 @@ function User({user}) {
         <div className="flex">
             <div className="rounded-full h-12 w-12 bg-slate-200 flex justify-center mt-1 mr-2">
                 <div className="flex flex-col justify-center h-full text-xl">
-                {user.firstName[0]}                    
+                {user.firstName[0].toUpperCase()}                    
                 </div>
             </div>
             <div className="flex flex-col justify-center h-ful">
