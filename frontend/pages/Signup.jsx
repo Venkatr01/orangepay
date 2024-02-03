@@ -37,7 +37,7 @@ export function Signup(){
           }} label={"Password"} />
 
           <Button onPress={async()=>{
-            const response = await axios.post("http://localhost:3000/api/v1/user/signup",{
+            const response = await axios.post("https://wallet-backed.onrender.com/api/v1/user/signup",{
               firstName,
               lastName,
               username,
